@@ -1,0 +1,20 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+[RequireComponent(typeof(Button))]
+public class Exit : MonoBehaviour
+{
+    private Button button;
+    private void Awake()
+    {
+        button = GetComponent<Button>();
+        button.onClick.AddListener(ExitGame);
+    }
+    private void ExitGame()
+    {
+        Debug.Log("Exit");
+        Application.Quit();
+    }
+}
